@@ -50,12 +50,12 @@ const Home = () => {
       try {
         const response = await axios.post(
           `${
-            process.env.REACT_APP_API_URL || "https://localhost:7025"
+            process.env.REACT_APP_API_URL || "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper"
           }/DVS/Digital_Evaluation_ValuatorBundleDetails`,
           {
-            GrpCode: process.env.REACT_APP_GRPCODE || "devprod",
-            ColCode: process.env.REACT_APP_COLCODE || "0001",
-            collegeId: process.env.REACT_APP_COLLEGEID || "1",
+            GrpCode:  "devprod",
+            ColCode:  "0001",
+            collegeId:"1",
             ValuatorId: new String(userData.valId),
           }
         );
@@ -85,14 +85,14 @@ const Home = () => {
       try {
         const response = await axios.post(
           `${
-            process.env.REACT_APP_API_URL || "https://localhost:7025"
+            process.env.REACT_APP_API_URL || "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper"
           }/DVS/Digital_EValuation_Get_UserDetails`,
           {
-            grpCode: process.env.REACT_APP_GRPCODE,
-            colCode: process.env.REACT_APP_COLCODE,
-            collegeId: process.env.REACT_APP_COLLEGEID,
+            grpCode: "devprod",
+            colCode: "0001",
+            collegeId: "1",
             email: userData.email,
-            flag: process.env.REACT_APP_GET_PROFILE || "VIEW",
+            flag:  "VIEW",
             OriginatorId: String(userData.id),
           }
         );
@@ -111,7 +111,7 @@ const Home = () => {
           if (userProfile.imagePath) {
             try {
               console.log(userProfile.valuatorId);
-              const imageURL = `https://localhost:7025/DVS/ValuatorPhotos/${userProfile.valuatorId}`;
+              const imageURL = `https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/ValuatorPhotos/${userProfile.valuatorId}`;
               await fetch(imageURL);
 
               console.log(imageURL);
@@ -283,7 +283,7 @@ const Home = () => {
 
     try {
       const uploadResponse = await axios.post(
-        "https://localhost:7025/DVS/Digital_Evaluation_UploadPhoto", // Adjust protocol/port
+        "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_UploadPhoto", // Adjust protocol/port
         formData,
         {
           headers: {
@@ -295,7 +295,7 @@ const Home = () => {
       if (imagePath) {
         try {
           
-          const imageURL = `https://localhost:7025/ValuatorPhotos/${userData.valId}`;
+          const imageURL = `https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/ValuatorPhotos/${userData.valId}`;
           await fetch(imageURL);
 
           setImagePreview(imageURL);
@@ -430,9 +430,9 @@ const Home = () => {
     try {
       let imagePath = updatedUser.imagePath;
       const payload = {
-        grpCode: process.env.REACT_APP_GRPCODE || "devprod",
-        colCode: process.env.REACT_APP_COLCODE || "0001",
-        collegeId: parseInt(process.env.REACT_APP_COLLEGEID || "1"),
+        grpCode:  "devprod",
+        colCode: "0001",
+        collegeId: parseInt("1"),
         valuatorId: updatedUser.valuatorId || userData.id,
         valuatorName: updatedUser.valuatorName || userData.name,
         designation: updatedUser.designation || "",
@@ -454,7 +454,7 @@ const Home = () => {
       console.log(payload);
       const response = await axios.post(
         `${
-          process.env.REACT_APP_API_URL || "https://localhost:7025"
+          process.env.REACT_APP_API_URL || "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper"
         }/DVS/Digital_EValuation_Get_UserDetails`,
         payload
       );
