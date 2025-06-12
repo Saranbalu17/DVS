@@ -29,7 +29,7 @@ const SubjectSelection = () => {
     const fetchSubjects = async () => {
       try {
         const response = await fetch(
-          "https://localhost:7025/DVS/Digital_Evaluation_SubjectSelection",
+          "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_SubjectSelection",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -65,7 +65,7 @@ const SubjectSelection = () => {
     const fetchSavedSubjects = async () => {
       try {
         const response = await fetch(
-          "https://localhost:7025/DVS/Digital_Evaluation_SubjectSelection",
+          "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_SubjectSelection",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -119,7 +119,7 @@ const SubjectSelection = () => {
     setError(null);
     try{
     const response = await fetch(
-      "https://localhost:7025/DVS/Digital_Evaluation_SubjectSelection",
+      "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_SubjectSelection",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -176,7 +176,7 @@ const SubjectSelection = () => {
       
         
       const response = await fetch(
-        "https://localhost:7025/DVS/Digital_Evaluation_SubjectSelection",
+        "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_SubjectSelection",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -198,7 +198,7 @@ const SubjectSelection = () => {
  
         // Refresh saved subjects
         const savedResponse = await fetch(
-          "https://localhost:7025/DVS/Digital_Evaluation_SubjectSelection",
+          "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_SubjectSelection",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
