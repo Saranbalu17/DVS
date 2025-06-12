@@ -51,7 +51,7 @@ const Login = () => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            grpCode: process.env.REACT_APP_GRPCODE,
+            grpCode: "devprod",
             userName: formData.Email,
             password: formData.Password,
             flag : "VIEW"
