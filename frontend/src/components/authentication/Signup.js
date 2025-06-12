@@ -30,8 +30,8 @@ const Signup = () => {
     const fetchCollegeCodes = async () => {
       try {
         const payload = {
-          grpCode: process.env.REACT_APP_GRPCODE,
-          colCode: process.env.REACT_APP_COLCODE,
+          grpCode: "devprod",
+          colCode: "0001",
           name: '',
           email: '',
           panCard: '',
@@ -39,7 +39,7 @@ const Signup = () => {
           flag: 'CollegeCodeList',
         };
         const response = await axios.post(
-          'https://localhost:7025/api/Registration/ValuatorRegistration',
+          'https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/api/Registration/ValuatorRegistration',
           payload,
           { headers: { 'Content-Type': 'application/json' } }
         );
@@ -172,8 +172,8 @@ const Signup = () => {
       const collegeName = selectedCollege ? selectedCollege.valuatorCollegeName : manualCollegeName;
  
       const payload = {
-        grpCode: process.env.REACT_APP_GRPCODE,
-        colCode: process.env.REACT_APP_COLCODE,
+        grpCode: "devprod",
+        colCode: "0001",
         name: formData.Name,
         email: formData.Email,
         panCard: formData.panCard,
@@ -185,7 +185,7 @@ const Signup = () => {
       
  
       const response = await axios.post(
-        'https://localhost:7025/api/Registration/ValuatorRegistration',
+        'https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/api/Registration/ValuatorRegistration',
         payload,
         { headers: { 'Content-Type': 'application/json' } }
       );
