@@ -46,7 +46,7 @@ const Login = () => {
     }
     try {
       const response = await fetch(
-        "https://localhost:7025/DVS/Digital_Evaluation_Login",
+        "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_Login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
