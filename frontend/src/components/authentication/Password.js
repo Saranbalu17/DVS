@@ -33,12 +33,12 @@ const PasswordChangePopup = () => {
     try {
  
       const loginResponse = await fetch(
-        "https://localhost:7025/DVS/Digital_Evaluation_Login",
+        "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_Login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            grpCode: process.env.REACT_APP_GRPCODE,
+            grpCode: "devprod",
             userName: userData.email,
             password: currentPassword,
             flag : "VIEW"
@@ -56,12 +56,12 @@ const PasswordChangePopup = () => {
  
  
        const updateResponse = await fetch(
-        "https://localhost:7025/DVS/Digital_Evaluation_Login",
+        "https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/DVS/Digital_Evaluation_Login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            grpCode: process.env.REACT_APP_GRPCODE,
+            grpCode: "devprod",
             userName: userData.email,
             password: newPassword,
             flag : "OVERWRITE"
