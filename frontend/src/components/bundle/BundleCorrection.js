@@ -593,7 +593,7 @@ const BundleCorrection = () => {
       if (!selectedStudentRoll) return;
       setIsLoading(true);
       try {
-        const originalPdfUrl = `https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/uploads/${selectedStudentRoll}`;
+        const originalPdfUrl = `https://beesprod.beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/Cloudilya/DVSScripts/uploads/${selectedStudentRoll}`;
         const response = await fetch(originalPdfUrl);
         
         if (!response.ok) throw new Error("Failed to load PDF");
@@ -1250,7 +1250,7 @@ const BundleCorrection = () => {
       formData.append("pdf", blob, filename);
       formData.append("studentRoll", selectedStudentRoll);
  
-      const saveResponse = await fetch("https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/api/PdfScriptHandle/save", {
+      const saveResponse = await fetch("https://beesprod.beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/Cloudilya/DVSScripts/api/PdfScriptHandle/save", {
         method: "POST",
         body: formData,
       });
@@ -1325,7 +1325,7 @@ const BundleCorrection = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://beesprod.beessoftware.cloud/CloudilyaAPIDeveloper/corrections/${selectedStudentRoll}`
+        `https://beesprod.beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/Cloudilya/DVSScripts/corrections/${selectedStudentRoll}`
       );
       if (!response.ok) throw new Error("Saved PDF not found");
       const arrayBuffer = await response.arrayBuffer();
